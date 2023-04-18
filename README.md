@@ -1,40 +1,39 @@
-# 2 lab. darbas, Paulius Kondratas 5 gr.
+# N queens on M-sized triangular board problem
 
-Užduotis: Rasti N valdovių išdėstymą M trikampėje lentoje, kad jos viena kitos nekirstų
+Task: to find N queen placement on M-sized triangular board so that they don't attack each other
 
 # Galimos funkcijos
 
-    Iš test.c failo:
+    From test.c file:
     
     -  void validTest(int board_size, int queen_count);
-        atlieka teisingus testus
+        completes correct tests
 
     -  void invalidTest(int board_size, int queen_count);
-        atlieka neteisingus testus
+        completes incorrect tests
 
     Iš triangleQueens.c ir triangleQueens.h
 
     -  void getInput(int *board_size, int *queen_count);
-        įvedamas lentos dydis ir valdovių skaičius ir patikrinama ar jie teisingi(jei ne, prašo įvesti iš naujo)
+        size of a board queen count is entered, both of them get validated(if not correct, user is asked to try again)
 
     -  Board createBoard(int board_size, int queen_count);
-        sukuriama lenta ir inicializuojami jos elementai
-        - grąžinama sukurta lenta
+        creates the board and initializes it
+        - returns the board 
 
     -  bool solvePlacement(Board *board, int board_size, int placed_queens, int current_row);
-        funkcija, kuri, naudodama "backtracking" algoritmą, randa ar ivestą valdovių skaičių galima sutalpinti
-        pasirinkto dydžio lentoje taip, kad jos viena kitai negrasintų
-        - true, jei išdėstymo būdas rastas
-        - false, jei išdėstymo būdas nerastas
+        function that by backtracking method finds whether it is possible to fit all the queens on the board in such way that they don't endanger each other
+        - true, if the placement is found
+        - false, if not found
 
 
     -  bool placementValidation(Board board, int queen_placement, int current_row);
-        tikrina, ar kordinatėse valdove nekerta anksčiau buvusių valdovių
-        - true, jei vieta laisva
-        - false, jei vieta negalima
+        checks whether the queen in given coordinates endangers previously placed queens 
+        - true, if placement is valid(doesn't endanger)
+        - false, if not
 
     -  void printBoard(Board board, int board_size);
-        į ekraną išvedamas lentos išdėstymas
+        prints the board to the console
 
     -  void freeBoard(Board *board, int board_size);
-        atlaisvinama panaudota atmintis sukuriant lentą(Board)
+        frees the memory used(Board)
