@@ -2,7 +2,9 @@
 
 Task: to find N queen placement on M-sized triangular board so that they don't attack each other
 
-# Galimos funkcijos
+Prints the first possible way to the console if possible. Otherwise, prints the message saying placement is invalid with given parameters
+
+# Functions
 
     From test.c file:
     
